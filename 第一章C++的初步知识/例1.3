@@ -1,0 +1,20 @@
+#include <iostream>
+using namespace std;
+int max(int x,int y)                      //定义max函数,函数值为整型，形式参数x,y为整型
+{                                         //max函数体开始
+  int z;
+  if(x>y)
+    z=x;
+  else
+    z=y;
+  return(z);
+}                                        //max函数结束
+
+int main()
+{
+  int a,b,m;
+  cin >> a >> b;
+  m = max(a,b);                          //调用max函数,将得到的值赋给m
+  cout << "max=" << m << '\n';
+  return 0;
+}
