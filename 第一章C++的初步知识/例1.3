@@ -18,3 +18,28 @@ int main()
   cout << "max=" << m << '\n';
   return 0;
 }
+
+  在上面的程序中，max函数出现在main函数之前，因此在main函数中调用max函数时，编译系统能识别max是已定义的函数名。如果把两个函数的位置对换
+一下，即先写main函数，后写max函数，这时在编译main函数遇到max时，编译系统无法知道max代表什么含义，因而无法编译，按出错处理。
+  为了解决这个问题，在主函数中需要对被调用函数作声明。上面的程序可以改写如下:
+
+#include <iostream>
+using namespace std;
+int main()
+{
+  int max(int x,int y);
+  int a,b,c;
+  cin >> a >> b;
+  cout << "max=" << c << endl;
+  return 0;
+}
+
+int max(int x,int y)
+{
+  int z;
+  if(x>y)
+    z = x;
+  else
+    z = y;
+  return(z);
+}
