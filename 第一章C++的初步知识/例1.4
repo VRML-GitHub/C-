@@ -1,0 +1,38 @@
+例1.4 包含类的C++程序
+#include <iostream>
+using namespace std;
+class Student
+{private:
+   int num;
+   float score;
+ public:
+   void setdata()
+   {  
+      cin >> num;
+      cin >> score;
+   }
+   void display()
+   {  
+      cout << "num=" << num << endl;
+      cout << "score=" << score << endl;
+   }
+};
+
+Student stud1,stud2;
+int main()
+{
+  stud1.setdata();
+  stud2.setdata();
+  stud1.display();
+  stud2.display();
+  return 0;
+}
+
+输入:
+1001 98.5
+1002 76.5
+输出:
+num=1001
+score=98.5
+num=1002
+score=76.5

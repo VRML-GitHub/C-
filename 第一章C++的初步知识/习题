@@ -1,0 +1,116 @@
+5.分析下面程序运行的结果
+#include <iostream>
+using namespace std;
+int main()
+{
+   cout << "This" << "is";
+   cout << "a" << "C++";
+   cout << "program." << endl;
+   return 0;
+}
+输出结果:
+ThisisaC++program.
+
+6.分析下面程序运行的结果
+#include <iostream>
+using namespace std;
+int main()
+{
+   int a,b,c;
+   a = 10;
+   b = 23;
+   c = a + b;
+   cout << "a + b = ";
+   cout << c;
+   cout << endl;
+   return 0;
+}
+输出结果:
+a + b = 33
+
+7.分析下面程序运行的结果
+#include <iostream>
+using namespace std;
+int main()
+{
+   int a,b,c;
+   int f(int x,int y,int z);
+   cin >> a >> b >> c;
+   c = f(a,b,c);
+   cout << c << endl;
+   return 0;
+}
+int f(int x,int y,int z)
+{
+   int m;
+   if(x < y)
+     m = x;
+   else
+     m = y;
+   if(z < m)
+     m = z;
+   return(m);
+}
+输出结果:
+输出三个数中的最小值.
+
+8.改正程序错误
+#include <iostream>                          //缺少io预处理命令
+using namespace std;                         //缺少命名空间声明
+int main()                                   //函数定义后不需加分号
+{
+   int a,b,c;                                //缺少变量c的声明
+   cin >> a >> b;                            //缺少变量输入
+   c = a + b;
+   cout << "a + b = " << a + b;              //输出流需用"<<"符
+   return 0;                                 //缺少函数返回值
+}
+
+9.改正程序错误
+#include <iostream>
+using namespace std;
+int main()
+{
+   int add(int x,int y);                    //main函数在开头，缺少函数声明
+   int a,b,c;                               //缺少变量c的声明
+   cin >> a >> b;                           //缺少数据输入
+   c = add(a,b);
+   cout << "a + b = " << c << endl;
+   return 0;
+}
+int add(int x,int y)                         //函数定义后不需要添加分号";"
+{
+   int z;                                    //缺少局部变量z的声明
+   z = x + y;
+   return(z);
+}
+
+10.输入以下程序，编译并运行，分析运行结果
+#include <iostream>
+using namespace std;
+int main()
+{
+   void sort(int x,int y,int z);
+   int x,y,z;
+   cin >> x >> y >> z;
+   sort(x,y,z);
+   return 0;
+}
+void sort(int x,int y,int z)
+{
+   int temp;
+   if(x > y)
+   {
+     temp = x;
+     x = y;
+     y = temp;
+   }
+   if(z < x)
+     cout << z << ',' << x << ',' << y << endl;
+   else if(z < y)
+     cout << x << ',' << z << ',' << y << endl;
+   else
+     cout << x << ',' << y << ',' << z << endl;
+}
+输出结果:
+输入的三个数按从小到大输出（注:输入三个数时使用空格间隔）
