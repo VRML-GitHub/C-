@@ -86,4 +86,31 @@ int add(int x,int y)                         //函数定义后不需要添加分
 }
 
 10.输入以下程序，编译并运行，分析运行结果
-#include 
+#include <iostream>
+using namespace std;
+int main()
+{
+   void sort(int x,int y,int z);
+   int x,y,z;
+   cin >> x >> y >> z;
+   sort(x,y,z);
+   return 0;
+}
+void sort(int x,int y,int z)
+{
+   int temp;
+   if(x > y)
+   {
+     temp = x;
+     x = y;
+     y = temp;
+   }
+   if(z < x)
+     cout << z << ',' << x << ',' << y << endl;
+   else if(z < y)
+     cout << x << ',' << z << ',' << y << endl;
+   else
+     cout << x << ',' << y << ',' << z << endl;
+}
+输出结果:
+输入的三个数按从小到大输出（注:输入三个数时使用空格间隔）
